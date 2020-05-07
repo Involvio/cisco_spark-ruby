@@ -43,7 +43,7 @@ module CiscoSpark
 
       def create(attributes)
         response = Api.new.post(@resource, attributes)
-        parse(response.body)
+        (200..201).include?(response.code.to_i) ? parse(response.body) : CiscoSpark::Error.new(response)
       end
 
       def update(id, attributes)
@@ -73,6 +73,10 @@ module CiscoSpark
 
     def initialize(attributes={})
       assign_attributes(attributes)
+    end
+
+    def valid?
+      true
     end
 
     def fetch
