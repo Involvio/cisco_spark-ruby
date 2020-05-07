@@ -12,6 +12,8 @@ module CiscoSpark
       resource: DataCaster::String,
       event: DataCaster::String,
       filter: DataCaster::String,
+      secret: DataCaster::String,
+      status: DataCaster::String,
       created: DataCaster::DateTime,
     )
     mutable_attributes :name, :target_url
