@@ -7,14 +7,15 @@ module CiscoSpark
 
     attributes(
       id: DataCaster::String,
+      room_id: DataCaster::String,
+      room_type: DataCaster::String,
+      text: DataCaster::String,
       person_id: DataCaster::String,
       person_email: DataCaster::String,
-      room_id: DataCaster::String,
-      text: DataCaster::Boolean,
+      html: DataCaster::String,
       files: DataCaster::Array,
-      to_person_id: DataCaster::String,
-      to_person_email: DataCaster::String,
       created: DataCaster::DateTime,
+      parent_id: DataCaster::String,
     )
 
     def person
